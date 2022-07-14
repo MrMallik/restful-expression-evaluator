@@ -32,7 +32,7 @@ def eval_expr(expression: ExpressionModel):
 
 def concatenate(*words):
     if len(words) == 0:
-        return "Error, Minimum 1 parameter has to be passed!"
+        return "Minimum 1 parameter necessary for concatenate()"
 
     ans = ""
 
