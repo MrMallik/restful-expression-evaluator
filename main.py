@@ -4,7 +4,7 @@ from random import choice
 from fastapi.middleware.cors import CORSMiddleware
 
 
-#We have this ExpressionModel to design our very own RequestBody using Pydantic BaseModel
+# We have this ExpressionModel to customise the RequestBody for our use-case
 
 class ExpressionModel(BaseModel):
     expression: str
