@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from random import choice
+from fastapi.middleware.cors import CORSMiddleware
+
 
 #We have this ExpressionModel to design our very own RequestBody using Pydantic BaseModel
 
@@ -9,6 +11,16 @@ class ExpressionModel(BaseModel):
 
 
 app = FastAPI()
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.post("/expression")
